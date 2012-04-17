@@ -1,0 +1,11 @@
+h1. RSpec-Kwalify "!https://secure.travis-ci.org/pmenglund/rspec-kwalify.png?branch=master!":http://travis-ci.org/pmenglund/rspec-kwalify
+
+RSpec matchers to help you use Kwalify in RSpec
+
+h1. Examples
+
+<pre>
+  it "should have validation error" do
+    validator.validate(asset("empty.yml")).should have_validation_error
+  end
+</pre>
