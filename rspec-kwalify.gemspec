@@ -7,9 +7,9 @@ Gem::Specification.new do |s|
   s.version     = RSpec::Kwalify::VERSION
   s.authors     = ["Martin Englund"]
   s.email       = ["martin@englund.nu"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/pmenglund/rspec-kwalify"
   s.summary     = %q{rspec matchers for kwalify}
-  s.description = %q{rspec matchers for kwalify}
+  s.description = %q{rspec matchers for kwalify to help you validate yaml files}
 
   s.rubyforge_project = "rspec-kwalify"
 

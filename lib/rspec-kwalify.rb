@@ -4,6 +4,7 @@ require "rspec-kwalify/version"
 module RSpec
   module Kwalify
 
+    # @author Martin Englund
     class HaveError
       def initialize(error, base_error=::Kwalify::BaseError)
         @error = error
@@ -43,14 +44,32 @@ module RSpec
   end
 end
 
-# have_error error of type Kwalify::BaseError
-# have_error(Fixnum) number of errors
-# have_error(Regexp) error with a message matching
+# @overload have_error
+#   Matches if it has an error that `is_a?` [Kwalify::BaseError]
+#   @return [RSpec::Kwalify::HaveError]
+# @overload have_error(count)
+#   Matches if the number of errors is equal to `count`
+#   @param [Fixnum] count
+#   @return [RSpec::Kwalify::HaveError]
+# @overload have_error(regexp)
+#   Matches if the error message matches the regexp
+#   @param [Regexp] regexp
+#   @return [RSpec::Kwalify::HaveError]
 def have_error(error=nil)
   RSpec::Kwalify::HaveError.new(error)
 end
 
-# have_validation_error
+# @overload have_validation_error
+#   Matches if it has an error that `is_a?` [Kwalify::ValidationError]
+#   @return [RSpec::Kwalify::HaveError]
+# @overload have_validation_error(count)
+#   Matches if the number of errors is equal to `count`
+#   @param [Fixnum] count
+#   @return [RSpec::Kwalify::HaveError]
+# @overload have_validation_error(regexp)
+#   Matches if the error message matches the regexp
+#   @param [Regexp] regexp
+#   @return [RSpec::Kwalify::HaveError]
 def have_validation_error(error=nil)
   RSpec::Kwalify::HaveError.new(error, ::Kwalify::ValidationError)
 end
